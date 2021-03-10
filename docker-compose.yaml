@@ -1,0 +1,21 @@
+services:
+  php:
+    container_name: myproject_php # Name of the container, for communication
+    build: ./docker/php
+    ports:
+      - '8080:80'                 # Which port we want the apache server to listen on
+    volumes:
+      - './php:/var/www/html'     # Which directory we store our code, and where it needs to go
+
+  mysql:
+    container_name: myproject_mysql
+    image: mysql:5.7
+    volumes:
+      - './mysql:/var/lib/mysql'
+    ports:
+      - 18766:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: myproject
+      MYSQL_USER: myproject_user
+      MYSQL_PASSWORD: myproject_password

@@ -16,3 +16,4 @@ This tutorial assumes that you already have the following installed on your work
 ---
 
 1. [Starting your first docker container](./tutorial/01-starting-your-first-container.md)
+2. [Composing some structure](./tutorial/02-composing-some-structure.md)
